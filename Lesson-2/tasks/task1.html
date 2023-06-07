@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tasks</title>
+</head>
+<body>
+
+  <h1>Задача 1</h1>
+
+  <p>
+    Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+  </p>
+
+  <script>
+    //1. Вводимо необхідні дані
+    let number1 = parseInt(prompt('введіть перше число', 1))
+    let number2 = parseInt(prompt('введіть друге число', 1))
+
+    //2. Знаходимо результат
+    let sumOfNumbers = number1 + number2
+    let productOfNumbers = number1 * number2
+    let quotientOfNumbers = number1 / number2
+    
+    //3. Виводимо результат
+    document.write(`
+    <table border="2px">
+      <tr>
+        <th>Шуканий результат</td>
+        <th>Отримане значення</td>
+      </tr>
+      <tr>
+        <th>Сума чисел</td>
+        <td>${sumOfNumbers}</td>
+      </tr>
+      <tr>
+        <th>Добуток чисел</td>
+        <td>${productOfNumbers}</td>
+      </tr>
+      <tr>
+        <th>Частка чисел</td>
+        <td>${quotientOfNumbers}</td>
+      </tr>
+    </table>
+    `)
+  </script>
+  
+</body>
+</html>
