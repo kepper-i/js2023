@@ -20,10 +20,15 @@
 
     //2. Знаходимо результат
     let numberMinutes = numberSeconds/60
-    let numberHour = numberSeconds/3600
+    let numberHours = numberSeconds/3600
+    let wholeHours = numberHours.toFixed(0)
+    let wholeMinutes = numberMinutes - wholeHours*60
     
     //3. Виводимо результат
-    document.write(`Це ${numberHour} годин, або ${numberMinutes} хвилин`)
+    document.write(`
+    Це ${numberHours} год., або ${numberMinutes} хв. <br>
+    Або ${wholeHours} год. та ${wholeMinutes}
+    `)
   </script>
   
 </body>
