@@ -22,7 +22,7 @@
     let numberMinutes = numberSeconds/60
     let numberHours = numberSeconds/3600
     let wholeHours = numberHours.toFixed(0)
-    let wholeMinutes = numberMinutes - wholeHours*60
+    let wholeMinutes = numberMinutes%60
     
     //3. Виводимо результат
     document.write(`
