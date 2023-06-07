@@ -21,10 +21,13 @@
     //2. Знаходимо результат
     let numberMinutes = numberSeconds/60
     let numberHours = numberSeconds/3600
+    let wholeMinutes = numberMinutes%60
+    let wholeHours = (numberMinutes - wholeMinutes) / 60
     
     //3. Виводимо результат
     document.write(`
     Це ${numberHours} год., або ${numberMinutes} хв. <br>
+    Або ${wholeHours} год. та ${wholeMinutes}
     `)
   </script>
   
