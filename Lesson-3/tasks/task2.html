@@ -15,18 +15,23 @@
   </p>
 
   <script>
+    
     //1. Вводимо необхідні дані
     let priceOfProduct = parseFloat(prompt('Введіть ціну товару'))
     let amountOfMoney = parseFloat(prompt('Введіть кількість грошей'))
 
+    const LOTTERY_COST = 4
+
     //2. Знаходимо і виводимо результат
     if (priceOfProduct > amountOfMoney)
       alert('Не вистачає грошей')
-    else if ((priceOfProduct + 4) <= amountOfMoney)
-      alert('Купіть лотерейку за 4 гривні')
+    else if ((priceOfProduct + LOTTERY_COST) <= amountOfMoney)
+      if (confirm(`Купіть лотерейку за ${LOTTERY_COST} гривні`))
+        alert('Нехай щастить!')
+      else
+        alert('Ну і не треба :-Р')
     else
       alert('Дякуємо за покупку')
-    
 
   </script>
   
