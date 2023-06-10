@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tasks</title>
+</head>
+<body>
+
+  <h1>Задача 3</h1>
+
+  <p>
+    Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+  </p>
+
+  <script>
+    //1. Вводимо необхідні дані
+    let min = 1, max = 5
+    let randomNumber = min + Math.floor(Math.random()*(max-min+1))
+    
+    let guessNumber = parseInt(prompt('вгадайте число від 1 до 5'))
+
+    //2. Знаходимо і виводимо результат
+    if (guessNumber != randomNumber) {
+      guessNumber = parseInt(prompt('Нажаль ні, але є ще одна спроба!'))
+        if (guessNumber != randomNumber)
+          alert('Ні, не вгадали(')
+        else
+          alert('Так! ви вгадали!')
+    }
+    else
+      alert('Так! ви вгадали!')
+    
+
+  </script>
+  
+</body>
+</html>
