@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 11</h1>
+
+      <p>
+        Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем
+        числами.
+      </p>
+
+      <script async>
+        //1. Вводимо необхідні дані
+        const minNum = parseInt(prompt("Введіть нижню числову межу"))
+        const maxNum = parseInt(prompt("Введіть верхню числову межу"))
+
+        let sumOdd = 0,
+          iteration = 0
+
+        //2. Знаходимо результат
+        document.write(`Рандомні числа: `)
+
+        do {
+          let randomNum =
+            minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+          if (randomNum % 2 !== 0) {
+            sumOdd += randomNum
+            ++iteration
+          }
+          document.write(` ${randomNum}`)
+        } while (iteration < 5)
+
+        //3. Виводимо результат
+        document.write(`<br> Сума п'яти непрарних чисел = ${sumOdd}`)
+      </script>
+    </div>
+  </body>
+</html>

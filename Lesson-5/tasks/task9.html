@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 9</h1>
+
+      <p>
+        Користувач загадує число. Комп’ютер задає питання поки не вгадає число
+        користувача (використати confirm).
+      </p>
+
+      <script async>
+        //1. Вводимо необхідні дані
+        alert("Загадайте число від 1 до 10")
+
+        const min = 1,
+          max = 10
+        let randomNum
+
+        //2. Знаходимо результат
+        do {
+          randomNum = min + Math.floor(Math.random() * (max - min + 1))
+        } while (!confirm(`Це ${randomNum} ?`))
+
+        //3. Виводимо результат
+        document.write("Ура, вгадав!")
+      </script>
+    </div>
+  </body>
+</html>

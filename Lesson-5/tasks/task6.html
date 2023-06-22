@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 6</h1>
+
+      <p>
+        Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній, з цифрами 1-9, 10-18
+        та 19-27)
+      </p>
+
+      <script>
+        //1. Вводимо необхідні дані
+        const rowsNum = 3
+        const columnsNum = 3
+        const tablesNum = 3
+
+        let showNum = 0
+
+        //2. Знаходимо результат
+        for (let m = 0; m < tablesNum; m++) {
+          document.write("<table >")
+          for (let i = 0; i < rowsNum; i++) {
+            document.write("<tr>")
+            for (let j = 1; j <= columnsNum; j++) {
+              document.write(`<td> ${++showNum} </td>`)
+            }
+            document.write("</tr>")
+          }
+          document.write("</table>")
+        }
+
+        //3. Виводимо результат
+      </script>
+    </div>
+  </body>
+</html>
