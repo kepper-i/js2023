@@ -32,7 +32,13 @@
         }
 
         //3. Виводимо результат
-        document.write(`Парних чисел - ${evenNum} шт, непарних - ${oddNum} шт`)
+        document.write(
+          `Парних чисел - ${evenNum} шт, непарних - ${oddNum} шт <br>`
+        )
+
+        if (evenNum > oddNum) document.write("Парних чисел більше")
+        else if (evenNum < oddNum) document.write("Непарних чисел більше")
+        else document.write("Непарних і парних однаково")
       </script>
     </div>
   </body>
