@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 12</h1>
+
+      <p>
+        Написати програму виведення на екран кожного символу латинського
+        алфавіту та поруч з кожним з них символу, що передує йому та що слідує
+        за ним.
+      </p>
+
+      <script>
+        //1. Вводимо необхідні дані
+        const symbolUTF8 = "&#"
+        let numberLetterInUTF8 = 65
+        let letter, previousLetter, nextLetter
+
+        //2. Знаходимо результат
+
+        do {
+          letter = symbolUTF8 + numberLetterInUTF8
+          previousLetter = symbolUTF8 + (numberLetterInUTF8 - 1)
+          nextLetter = symbolUTF8 + (numberLetterInUTF8 + 1)
+
+          document.write(`${previousLetter} - ${letter} - ${nextLetter} <br>`)
+          numberLetterInUTF8++
+        } while (numberLetterInUTF8 !== 91)
+
+        //3. Виводимо результат
+      </script>
+    </div>
+  </body>
+</html>

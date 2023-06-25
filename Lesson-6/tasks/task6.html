@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 6</h1>
+
+      <p>
+        Інвестор вклав X тис. грн на Y років під 20% річних, податок складає 5%
+        від суми прибутку. Визначити за допомогою циклів суму, яку він одержить.
+      </p>
+
+      <script>
+        //1. Вводимо необхідні дані
+        let numMoney = parseInt(prompt("Скільки вибажаєте вкласти грошей?"))
+        const numYears = parseInt(prompt("Введіть на скільки років"))
+        const percentDeposit = 20
+        const numTax = 5
+
+        //2. Знаходимо результат
+        for (let i = 0; i < numYears; i++) {
+          numMoney =
+            numMoney +
+            numMoney * (percentDeposit / 100) -
+            numMoney * (percentDeposit / 100) * (numTax / 100)
+        }
+
+        numMoney = Math.floor(numMoney)
+
+        //3. Виводимо результат
+        document.write(`На прикінці терміну ви отримаєте ${numMoney} грн`)
+      </script>
+    </div>
+  </body>
+</html>

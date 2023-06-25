@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 11.1</h1>
+
+      <p>
+        Вивести на екран усі трицифрові числа, у яких перша цифра є більшою або
+        рівною за суму другої і третьої.
+      </p>
+
+      <script>
+        //1. Вводимо необхідні дані
+        let hundreds, dozens, units, sumDozensAndUnits
+
+        //2. Знаходимо результат
+        for (let i = 100; i < 999; i++) {
+          hundreds = Math.floor(i / 100)
+          dozens = Math.floor(i / 10) - hundreds * 10
+          units = i - hundreds * 100 - dozens * 10
+          sumDozensAndUnits = dozens + units
+
+          if (hundreds >= sumDozensAndUnits) document.write(`${i} `)
+        }
+      </script>
+    </div>
+  </body>
+</html>
