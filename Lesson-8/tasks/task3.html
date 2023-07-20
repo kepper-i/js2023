@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 3</h1>
+
+      <p>
+        Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я
+        «Іван».
+      </p>
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        let arr = ["Іван", "Микола", "Максим", "Олена", "Іван", "Софія"]
+        let numName = 0
+        let isName = "Іван"
+
+        //2. Знаходимо результат
+        let getNumberName = (isName) => {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === isName) numName++
+          }
+          return numName
+        }
+
+        // 3. Виводимо результат
+        document.write(`Імена в масиві: ${arr} <br><br>`)
+
+        document.write(
+          `Ім'я ${isName} зустрічається ${getNumberName(isName)} разів`
+        )
+      </script>
+    </div>
+  </body>
+</html>

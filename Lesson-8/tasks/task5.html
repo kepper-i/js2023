@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 5</h1>
+
+      <p>
+        Дано послідовність оцінок учня. Підрахувати кількість: <br />
+        1) двійок <br />
+        2) кількість хороших оцінок (добре, відмінно); <br />
+        3) кількість оцінок, які нижче середнього.
+      </p>
+
+      <script>
+        "use strict"
+
+        //1. Вводимо необхідні дані
+        let arr = [2, 3, 4, 5, 3, 4, 3]
+
+        //2. Знаходимо результат
+        let getNum2 = function () {
+          let num2 = 0
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 2) num2++
+          }
+          return num2
+        }
+
+        let getNum4_5 = function () {
+          let num4_5 = 0
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 4 || arr[i] === 5) num4_5++
+          }
+          return num4_5
+        }
+
+        let getAverageRating = function () {
+          let averageRating = 0
+          for (let i = 0; i < arr.length; i++) {
+            averageRating += arr[i]
+          }
+          averageRating = averageRating / arr.length
+          return averageRating
+        }
+
+        let getNumBelowAverage = function () {
+          let numBelowAverage = 0
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < getAverageRating(arr)) numBelowAverage++
+          }
+          return numBelowAverage
+        }
+
+        // 3. Виводимо результат
+        document.write(`Оцінки учня: ${arr} <br><br>`)
+
+        document.write(`Кількість двійок = ${getNum2(arr)} <br>`)
+        document.write(
+          `Кількість хороших оцінок (добре, відмінно) = ${getNum4_5(arr)} <br>`
+        )
+        document.write(
+          `Кількість оцінок, які нижче середнього = ${getNumBelowAverage(
+            arr
+          )}<br>`
+        )
+      </script>
+    </div>
+  </body>
+</html>

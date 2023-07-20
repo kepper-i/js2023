@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 4</h1>
+
+      <p>
+        Дано послідовність номерів автомобілів. Підрахувати кількість номерів,
+        які :<br />
+        • починаються на букву «А»;<br />
+        • перша і остання літери співпадають;<br />
+        • складаються з більше ніш 5 символів;
+      </p>
+
+      <script>
+        "use strict"
+
+        //1. Вводимо необхідні дані
+        let arr = ["AA2354AB", "AF9484BA", "F94F", "A4BN", "AF9484FG"]
+
+        //2. Знаходимо результат
+        function getNumBeginLetter_A() {
+          let numBeginLetter_A = 0
+          for (let i = 0; i < arr.length; i++) {
+            let array = []
+            for (let letter of arr[i]) {
+              array.push(letter)
+            }
+            if (array[0] === "A") numBeginLetter_A++
+          }
+          return numBeginLetter_A
+        }
+
+        function getNumStartLetterEqualEndLetter() {
+          let numStartLetterEqualEndLetter = 0
+          for (let i = 0; i < arr.length; i++) {
+            let array = []
+            for (let letter of arr[i]) {
+              array.push(letter)
+            }
+            if (array[0] === array[array.length - 1])
+              numStartLetterEqualEndLetter++
+          }
+          return numStartLetterEqualEndLetter
+        }
+
+        function getNumMore5Sybols() {
+          let numMore5Sybols = 0
+          for (let i = 0; i < arr.length; i++) {
+            let array = []
+            for (let letter of arr[i]) {
+              array.push(letter)
+            }
+            if (array.length > 5) numMore5Sybols++
+          }
+          return numMore5Sybols
+        }
+
+        // 3. Виводимо результат
+        document.write(`Послідовніть номерів автомобілів: ${arr} <br> <br>`)
+
+        document.write(
+          `Кількість номерів автомобілів, які починаються з "А" = ${getNumBeginLetter_A(
+            arr
+          )} шт. <br>`
+        )
+
+        document.write(
+          `Кількість номерів автомобілів, в яких перша і остання літери співпадають = ${getNumStartLetterEqualEndLetter(
+            arr
+          )} шт. <br>`
+        )
+
+        document.write(
+          `Кількість номерів автомобілів, які складаються з більше ніш 5 символів = ${getNumMore5Sybols(
+            arr
+          )} шт. <br>`
+        )
+      </script>
+    </div>
+  </body>
+</html>

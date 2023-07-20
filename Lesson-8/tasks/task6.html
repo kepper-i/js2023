@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 5</h1>
+
+      <p>
+        Дано послідовність цін товарів та назв (у окремих масивах). Вивести на
+        екран ті, які може собі дозволити користувач (кількість грошей
+        задається).
+      </p>
+
+      <script>
+        "use strict"
+
+        //1. Вводимо необхідні дані
+        let arrPrice = [22, 338, 44, 55, 31, 444, 35]
+        let arrProductName = [
+          "Товар0",
+          "Товар1",
+          "Товар2",
+          "Товар3",
+          "Товар4",
+          "Товар5",
+          "Товар6",
+        ]
+
+        const buyer_sMoney = parseFloat(prompt("На яку суму ви розраховуєте?"))
+
+        //2. Знаходимо результат
+        document.write(
+          `У вас є ${buyer_sMoney} грн., ви можете купити: <br><br>`
+        )
+        for (let i = 0; i < arrPrice.length; i++) {
+          if (arrPrice[i] <= buyer_sMoney) {
+            document.write(`${arrProductName[i]} за ${arrPrice[i]} грн. <br>`)
+          }
+        }
+
+        // 3. Виводимо результат
+      </script>
+    </div>
+  </body>
+</html>
