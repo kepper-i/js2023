@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 4</h1>
+
+      <p>
+        Дано масив елементів. Вивести на екран елементи, що більші за 100
+        (використати цикл for..of)
+      </p>
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        let arr = [12, 1233, 345, 45, 32, 100, 101]
+
+        //2. Знаходимо результат
+        let itemsOver_100 = (array) => {
+          let res = []
+          for (const i of array) {
+            if (i > 100) res.push(i)
+          }
+          return res
+        }
+
+        //3. Виводимо результат
+        document.write(`Дано масив [${arr}] <br><br>`)
+        document.write(`Елементи масиву більші за 100: ${itemsOver_100(arr)}`)
+      </script>
+    </div>
+  </body>
+</html>

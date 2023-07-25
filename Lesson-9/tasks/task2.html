@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 2</h1>
+
+      <p>
+        Користувач вводить кількість елементів. Створити масив, у якому перша
+        половина заповнена 1-цями, а друга заповнена 7-ками.
+      </p>
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        let quantityElements = parseInt(prompt("Введіть кількість елементів"))
+
+        //2. Знаходимо результат
+        let fillArr1_7 = (num) =>
+          new Array(num).fill(1, 0, num / 2).fill(7, num / 2)
+
+        //3. Виводимо результат
+        document.write(`Результат - [${fillArr1_7(quantityElements)}]`)
+      </script>
+    </div>
+  </body>
+</html>
