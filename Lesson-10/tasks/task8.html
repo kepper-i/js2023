@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 8</h1>
+
+      <p>Підрахувати кількість цін, що більше за 1000</p>
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        let arr = [
+          23, 23, 345, 1103, 450, 28, 932, 999, 120, 32, 32, 1200, 9831,
+        ]
+
+        //2. Знаходимо результат
+        let numPricesOver1000 = arr.reduce(
+          (countElemOver1000, elem) =>
+            elem > 1000 ? countElemOver1000 + 1 : countElemOver1000,
+          0
+        )
+
+        //3. Виводимо результат
+        document.write(
+          "кількість цін, що більше за 1000 = " + numPricesOver1000
+        )
+      </script>
+    </div>
+  </body>
+</html>

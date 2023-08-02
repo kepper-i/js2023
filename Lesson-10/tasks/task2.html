@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 2</h1>
+
+      <p>
+        Сформувати новий масив, у якому є номери тільки тих, що більші за 1000
+        грн.
+      </p>
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        //          0    1     2    3   4     5    6     7   8     9
+        let arr = [23, 345, 1093, 450, 28, 9832, 999, 1120, 32, 4893]
+        let indexesOfElementOver1000_1 = []
+        let indexesOfElementOver1000_2 = []
+        let indexesOfElementOver1000_3 = []
+
+        //2. Знаходимо результат
+        arr.filter((el, index) => {
+          if (el > 1000) indexesOfElementOver1000_1.push(index)
+        })
+
+        //============
+
+        arr.map((el, index) => {
+          if (el > 1000) indexesOfElementOver1000_2.push(index)
+        })
+
+        //============
+
+        arr.forEach((el, index) => {
+          if (el > 1000) indexesOfElementOver1000_3.push(index)
+        })
+
+        //============
+
+        let indexes = arr.map(
+          (el, index, baseArr) => (el > 1000 ? index : "_як це убрати?_") // ЧИ МОЖНА ТАК ЗРОБИТИ ЩОБ ТРЕТІЙ ОПЕРАНД НІЧОГО НЕ РОБИВ??
+        )
+
+        //3. Виводимо результат
+        document.write("Через filter: " + indexesOfElementOver1000_1)
+        document.write("<br><br>")
+        document.write("Через map: " + indexesOfElementOver1000_2)
+        document.write("<br><br>")
+        document.write("Через forEach: " + indexesOfElementOver1000_3)
+        document.write("<br><br>")
+        document.write(indexes)
+      </script>
+    </div>
+  </body>
+</html>
