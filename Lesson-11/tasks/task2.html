@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 2</h1>
+
+      <!-- <p>Дано інформацію про прибуток К магазинів протягом тижня. Знайти :</p>
+      <p>1) загальний прибуток кожного магазину за тиждень;</p>
+      <p>
+        2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх
+        магазинів за понеділок, за вівторок, і т.д.)
+      </p>
+      <p>3) загальний прибуток за робочі дні</p>
+      <p>4) загальний прибуток за вихідні дні</p>
+      <p>5) максимальний прибуток за середу</p>
+      <p>
+        6) сформувати загальний список (одновимірний масив) зі значенням, які що
+        більші за 200
+      </p>
+      <p>7) відсортувати кожен тиждень за зростанням</p>
+      <p>
+        8) відсортувати тижні (рядки) за спаданням максимального елементи у
+        цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати
+        максимальні елементи у кожному з цих рядків
+      </p>
+      <p>
+        9) упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто
+        при порівнянні двох рядків треба знайти суму кожного з рядків і
+        порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів
+        повинен іти раніше).
+      </p> -->
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        let arr = [
+          //0     1     2     3     4     5      6 - дні тижня
+          [1000, 1000, 1000, 1000, 2000, 12000, 12000], // 0
+          [3000, 3000, 3000, 3000, 4000, 14000, 14000], // 1
+          [5000, 5000, 5000, 5000, 6000, 5500, 16000], // 2
+          [7000, 7000, 7000, 7000, 8000, 18000, 18000], // 3
+          [9000, 9000, 9000, 9000, 5000, 15000, 15000], // 4
+          [2000, 2000, 2000, 2000, 1500, 15000, 15000], // 5
+        ]
+
+        //===================== 1) загальний прибуток кожного магазину за тиждень =============================
+        //2. Знаходимо результат
+        function getInkomeStoreWeek(table, numStore) {
+          let inkomeStoreWeek = 0
+          for (let i = 0; i < 7; i++) {
+            inkomeStoreWeek += table[numStore][i]
+          }
+          return inkomeStoreWeek
+        }
+
+        //3. Виводимо результат
+        let store = 0
+        do {
+          document.write(
+            `Прибуток за тиждень магазина № ${store + 1} =
+            ${getInkomeStoreWeek(arr, store)} <br>`
+          )
+          store++
+        } while (store < arr.length)
+
+        //===================== 2) загальний прибуток усіх магазинів по дням ==================================
+        //====== (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д. ======
+        //2. Знаходимо результат
+        function getInkomeStoresDay(table, numDay) {
+          let inkomeStoresDay = 0
+          for (let i = 0; i < table.length; i++) {
+            inkomeStoresDay += table[i][numDay]
+          }
+          return inkomeStoresDay
+        }
+
+        //3. Виводимо результат
+        document.write("<br><br><br>")
+
+        for (let i = 0; i < 7; i++) {
+          document.write(
+            `Прибуток всіх магазинів за ${i + 1}-й день тижня =
+            ${getInkomeStoresDay(arr, i)} <br>`
+          )
+        }
+
+        //======== 3) загальний прибуток за робочі дні; 4) загальний прибуток за вихідні дні ===========
+        //2. Знаходимо результат
+        function getInkomeStoresWorkDays(table, startDay, finishDay) {
+          let inkomeStoresWorkDays = 0
+          for (let i = 0; i < table.length; i++) {
+            for (let j = startDay; j <= finishDay; j++) {
+              inkomeStoresWorkDays += table[i][j]
+            }
+          }
+          return inkomeStoresWorkDays
+        }
+
+        //3. Виводимо результат
+        document.write(
+          `<br><br><br>
+          Загальний прибуток за робочі дні =
+          ${getInkomeStoresWorkDays(arr, 0, 4)}`
+        )
+        document.write(
+          `<br>
+          Загальний прибуток за вихідні дні =
+          ${getInkomeStoresWorkDays(arr, 5, 6)}`
+        )
+
+        //===================== 5) максимальний прибуток за середу ====================================
+        //2. Знаходимо результат
+        function getMaxProfitPerDay(table, dayOfWeek) {
+          let maxProfit = -Infinity
+          for (let store = 0; store < table.length; store++) {
+            if (table[store][dayOfWeek] > maxProfit)
+              maxProfit = table[store][dayOfWeek]
+          }
+          return maxProfit
+        }
+        //3. Виводимо результат
+        document.write(
+          `<br><br><br>
+          Максимальний прибуток за середу =
+          ${getMaxProfitPerDay(arr, 2)}`
+        )
+
+        //===================== 7) відсортувати кожен тиждень за зростанням ====================================
+        //2. Знаходимо результат
+        function sortWeek(table) {
+          for (let store = 0; store < table.length; store++) {
+            table[store].sort((el1, el2) => el1 - el2)
+          }
+          return table
+        }
+
+        //3. Виводимо результат
+        console.log(sortWeek(arr))
+      </script>
+    </div>
+  </body>
+</html>

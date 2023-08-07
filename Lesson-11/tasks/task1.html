@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>tasks</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Задача 1</h1>
+
+      <p>
+        1-4) Знайти суми елементів у кожній чверті масива (масиви розділені на 4
+        рівні частини)
+      </p>
+      <p>5) Суму парних рядків</p>
+      <p>6) Суму непарних стовпців</p>
+      <p>7) У парних рядках – непарні стовпці, у непарних – парні.</p>
+
+      <script>
+        "use strict"
+        //1. Вводимо необхідні дані
+        let arr = [
+          //0  1  2  3  4  5  6  7
+          [1, 1, 1, 1, 2, 2, 2, 2], // 0
+          [3, 3, 3, 3, 4, 4, 4, 4], // 1
+          [5, 5, 5, 5, 6, 6, 6, 6], // 2
+          [7, 7, 7, 7, 8, 8, 8, 8], // 3
+          [9, 9, 9, 9, 1, 1, 1, 1], // 4
+          [2, 2, 2, 2, 5, 5, 5, 5], // 5
+        ]
+
+        let arr2 = [
+          //0  1  2  3
+          [1, 2, 1, 2], // 0
+          [3, 4, 3, 4], // 1
+          [5, 6, 5, 6], // 2
+          [7, 8, 7, 8], // 3
+        ]
+
+        //=================== ПІДЗАВДАННЯ 1-4 ========================
+        //Знайти суми елементів у кожній чверті масива (масиви розділені на 4 рівні частини)
+
+        //2. Знаходимо результат
+        function sumQuoter(table, rowStart, rowEnd, columnStart, columnEnd) {
+          let sumQuarter = 0
+
+          for (let i = rowStart; i <= rowEnd; i++) {
+            for (let j = columnStart; j <= columnEnd; j++) {
+              sumQuarter += table[i][j]
+            }
+          }
+          return sumQuarter
+        }
+
+        //3. Виводимо результат
+        document.write(
+          "Сума елементів верхньої лівої чверті = " +
+            sumQuoter(arr, 0, arr.length / 2 - 1, 0, arr[0].length / 2 - 1) +
+            "<br>" +
+            "<br>"
+        )
+        document.write(
+          "Сума елементів верхньої правої чверті = " +
+            sumQuoter(arr, 0, 2, 4, 7) +
+            "<br>" +
+            "<br>"
+        )
+        document.write(
+          "Сума елементів нижньої лівої чверті = " +
+            sumQuoter(arr, 3, 5, 0, 3) +
+            "<br>" +
+            "<br>"
+        )
+        document.write(
+          "Сума елементів нижньої правої чверті = " +
+            sumQuoter(arr, 3, 5, 4, 7) +
+            "<br>" +
+            "<br>" +
+            "<br>"
+        )
+
+        //=================== ПІДЗАВДАННЯ 5 ========================
+        //Суму парних рядків
+
+        //2. Знаходимо результат
+        function getSumRows(table, rowStart) {
+          let sumRows = 0
+
+          for (let i = rowStart; i < table.length; i += 2) {
+            for (let j = 0; j < table[i].length; j++) {
+              sumRows += table[i][j]
+            }
+          }
+          return sumRows
+        }
+
+        //3. Виводимо результат
+        document.write(
+          "Сума парних рядків = " +
+            getSumRows(arr, 0) +
+            "<br>" +
+            "<br>" +
+            "<br>"
+        )
+
+        //=================== ПІДЗАВДАННЯ 6 ========================
+        //Суму непарних стовпців
+
+        //2. Знаходимо результат
+        function getSumColumns(table, columnStart) {
+          let sumColumns = 0
+
+          for (let i = 0; i < table.length; i++) {
+            for (let j = columnStart; j < table[i].length; j += 2) {
+              sumColumns += table[i][j]
+            }
+          }
+          return sumColumns
+        }
+
+        //3. Виводимо результат
+        document.write(
+          "Сума непарних стовбців = " +
+            getSumColumns(arr, 1) +
+            "<br>" +
+            "<br>" +
+            "<br>"
+        )
+
+        //=================== ПІДЗАВДАННЯ 7 ========================
+        //У парних рядках – непарні стовпці, у непарних – парні
+
+        //2. Знаходимо результат
+        function getSumEvenOddOddEven(table) {
+          let sum = 0
+          let columnStart
+
+          for (let i = 0; i < table.length; i++) {
+            if (i % 2 === 0) columnStart = 1
+            else columnStart = 0
+
+            for (let j = columnStart; j < table[i].length; j += 2) {
+              sum += table[i][j]
+            }
+          }
+          return sum
+        }
+
+        //3. Виводимо результат
+        document.write(
+          "Сума у парних рядках – непарні стовпці, у непарних – парні = " +
+            getSumEvenOddOddEven(arr2) +
+            "<br>" +
+            "<br>" +
+            "<br>"
+        )
+      </script>
+    </div>
+  </body>
+</html>
